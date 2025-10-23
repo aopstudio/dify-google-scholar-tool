@@ -35,3 +35,6 @@ Both Chatflow and Workflow applications support adding a Google Scholar tool nod
 #### Agent applications
 
 Add the Google Scholar tool in the Agent application, then enter online search instructions to call this tool.
+
+### Repository URL
+https://github.com/aopstudio/dify-google-scholar-tool
