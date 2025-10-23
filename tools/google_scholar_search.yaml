@@ -1,0 +1,82 @@
+identity:
+  name: google_scholar_search
+  author: aopstudio
+  label:
+    en_US: GoogleScholarSearch
+    zh_Hans: 谷歌学术搜索
+    pt_BR: GoogleScholarSearch
+description:
+  human:
+    en_US: A tool for performing a Google Scholar SERP search and extracting snippets and webpages.Input should be a search query.
+    zh_Hans: 一个用于执行 Google 学术 SERP 搜索并提取片段和网页的工具。输入应该是一个搜索查询。
+    pt_BR: A tool for performing a Google Scholar SERP search and extracting snippets and webpages.Input should be a search query.
+  llm: A tool for performing a Google Scholar SERP search and extracting snippets and webpages.Input should be a search query.
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query string
+      zh_Hans: 查询语句
+      pt_BR: Query string
+    human_description:
+      en_US: used for searching
+      zh_Hans: 用于搜索网页内容
+      pt_BR: used for searching
+    llm_description: key words for searching
+    form: llm
+  - name: as_ylo
+    type: number
+    required: false
+    label:
+      en_US: From year
+      zh_Hans: 起始年份
+      pt_BR: From year
+    human_description:
+      en_US: The earliest publication year to include in search results.
+      zh_Hans: 搜索结果中要包含的最早年份。
+      pt_BR: The earliest publication year to include in search results.
+    llm_description: lower bound of publication year for search filtering
+    form: llm
+  - name: as_yhi
+    type: number
+    required: false
+    label:
+      en_US: To year
+      zh_Hans: 结束年份
+      pt_BR: To year
+    human_description:
+      en_US: The latest publication year to include in search results.
+      zh_Hans: 搜索结果中要包含的最晚年份。
+      pt_BR: The latest publication year to include in search results.
+    llm_description: upper bound of publication year for search filtering
+    form: llm
+  - name: hl
+    type: string
+    required: false
+    label:
+      en_US: Language
+      zh_Hans: 语言
+      pt_BR: Language
+    human_description:
+      en_US: Parameter defines the language to use for the Google search. It's a two-letter language code. (e.g., en for English, es for Spanish, or fr for French). Head to https://serpapi.com/google-languages for a full list of supported Google languages.
+      zh_Hans: 此参数定义用于 Google 搜索的语言。它是一个两字母的语言代码。 (例如，en 代表英语，es 代表西班牙语，fr 代表法语)。请前往 https://serpapi.com/google-languages 查看完整的支持 Google 语言列表。
+      pt_BR: Parameter defines the language to use for the Google search. It's a two-letter language code. (e.g., en for English, es for Spanish, or fr for French). Head to https://serpapi.com/google-languages for a full list of supported Google languages.
+    llm_description: Language
+    form: llm
+  - name: gl
+    type: string
+    required: false
+    label:
+      en_US: Country
+      zh_Hans: 国家
+      pt_BR: Country
+    human_description:
+      en_US: Parameter defines the country to use for the Google search. It's a two-letter country code. (e.g., us for the United States, uk for United Kingdom, or fr for France). Head to the https://serpapi.com/google-countries for a full list of supported Google countries.
+      zh_Hans: 此参数定义用于 Google 搜索的国家。它是一个两字母的国家代码。 (例如，us 代表美国，uk 代表英国，fr 代表法国)。请前往 https://serpapi.com/google-countries 查看完整的支持 Google 国家列表。
+      pt_BR: Parameter defines the country to use for the Google search. It's a two-letter country code. (e.g., us for the United States, uk for United Kingdom, or fr for France). Head to the https://serpapi.com/google-countries for a full list of supported Google countries.
+    llm_description: Country
+    form: llm
+extra:
+  python:
+    source: tools/google_scholar_search.py

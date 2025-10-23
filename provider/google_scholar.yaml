@@ -1,0 +1,36 @@
+identity:
+  author: aopstudio
+  name: google_scholar
+  label:
+    en_US: Google Scholar
+    zh_Hans: Google 学术
+    pt_BR: Google Scholar
+  description:
+    en_US: Google Scholar
+    zh_Hans: Google 学术搜索
+    pt_BR: Google Scholar
+  icon: icon.svg
+  tags:
+    - search
+credentials_for_provider:
+  serpapi_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: SerpApi API key
+      zh_Hans: SerpApi API key
+      pt_BR: SerpApi API key
+    placeholder:
+      en_US: Please input your SerpApi API key
+      zh_Hans: 请输入你的 SerpApi API key
+      pt_BR: Please input your SerpApi API key
+    help:
+      en_US: Get your SerpApi API key from SerpApi
+      zh_Hans: 从 SerpApi 获取您的 SerpApi API key
+      pt_BR: Get your SerpApi API key from SerpApi
+    url: https://serpapi.com/manage-api-key
+tools:
+  - tools/google_scholar_search.yaml
+extra:
+  python:
+    source: provider/google_scholar.py
